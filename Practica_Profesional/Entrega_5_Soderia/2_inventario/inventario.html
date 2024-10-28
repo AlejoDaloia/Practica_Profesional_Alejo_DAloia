@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/handl3r_logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="inventario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Inventario - Handl3r</title>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="header-box d-flex justify-content-between align-items-center">
+            <button class="openbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">&#9776; Menu</button>
+            <div class="header-content d-flex align-items-center">
+                Handl3r <img src="/assets/handl3r_logo.jpg" alt="logo">
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasMenu">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menú</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body side-panel">
+                <a href="/1_inicio/index.html">Inicio</a>
+                <a id="inventario" href="/2_inventario/inventario.html">Inventario</a>
+                <a href="/3_entrega/entrega.html">Entregas</a>
+                <a href="/5_cliente/cliente.html">Clientes</a>
+                <a href="/4_recorrido/recorrido.html">Rutas</a>
+                <a href="/0_login/login.html">Cerrar Sesión</a>
+                <footer>Handl3r &#169 2024</footer>
+            </div>
+        </div>
+
+        <div class="content d-flex flex-column align-items-center">
+            <h2>INVENTARIO</h2>
+            <div class="modal fade" id="modalform" tabindex="-1" aria-labelledby="modalformLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalformLabel">Registrar Producto</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad inicial</label>
+                                <input type="text" class="form-control" id="cantidad">
+                            </div>
+                            <div class="mb-3">
+                                <label for="precio" class="form-label">Precio</label>
+                                <input type="text" class="form-control" id="precio">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary" id="guardarProducto">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <button class="add-button btn btn-success mt-4" data-bs-toggle="modal" data-bs-target="#modalform">
+                Nuevo Producto
+            </button>
+
+            <div class="table-responsive">
+                <table class="inventory-table table table-bordered mt-3" id="active-table">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Última Actualización</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive">
+                <table class="inactive-inventory-table table table-bordered mt-3" id="inactive-table">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Última Actualización</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="inventario.js"></script>
+</body>
+</html>

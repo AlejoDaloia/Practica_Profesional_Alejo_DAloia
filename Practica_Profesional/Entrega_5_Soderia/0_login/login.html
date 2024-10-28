@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/handl3r_logo.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/0_login/style_login.css">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-box">
+            <h3>Handl3r <img src="/assets/handl3r_logo.jpg" alt="logo handl3r"></h3>
+        </div>
+    </div>
+    <div class="content container d-flex flex-column justify-content-center align-items-center">
+        <div class="title-box text-center">
+            <h2>INICIO DE SESIÓN</h2>
+        </div>
+        <div class="login-box p-4 shadow rounded">
+            <div class="form-box">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">USUARIO</label>
+                        <input type="text" id="username" name="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">CONTRASEÑA</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 ingresar-btn">INGRESAR</button>
+                </form>                
+            </div>
+        </div>
+    </div>
+
+<!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Registrar Nuevo Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="newUsername">Usuario</label>
+                        <input type="text" id="newUsername" name="newUsername" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Contraseña</label>
+                        <input type="password" id="newPassword" name="newPassword" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar contraseña</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100" id="registerSubmitButton">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="footer-box text-center">
+        <footer>Handl3r &#169 2024</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
